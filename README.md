@@ -1,4 +1,4 @@
-____________ EX 1 _________________
+ex 1
 
 import requests
 from bs4 import BeautifulSoup
@@ -35,4 +35,3 @@ df = pd.DataFrame(quotes_data)
 print(df.head(10))
 
 # === END ===
-
