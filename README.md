@@ -1,9 +1,13 @@
 ai 1.py si 2.py 3.py si 4.py .toate in tema_bibble
 
-de ce e normalizat la 1? care e bucata care o face
+„normalizați tag-urile ca listă de string-uri” înseamnă să faci tagurile așa:
+["change", "deep-thoughts", "thinking", "world"]
 
-În Exercițiul 1 cu cărțile, disponibilitatea este „normalizată la 1” pentru că cerința spunea: disponibilitatea: 1 pentru "In stock", 0 altfel
+Această bucată ia tag-urile din HTML și le transformă într-o listă de string-uri:
+tags = [
+    tag.get_text(strip=True)
+    for tag in quote.select("a.tag")
+]
 
-Bucata care face asta este: availability_text = book.select_one(".availability").get_text(strip=True) availability = 1 if "In stock" in availability_text else 0
 
-Mai exact, importanta este: availability = 1 if "In stock" in availability_text else 0
+Asta înseamnă „normalizare” în exercițiul tău: tag-urile nu rămân ca elemente HTML, ci sunt transformate într-o listă Python de string-uri.
